@@ -1,0 +1,24 @@
+public class Easy {
+
+    public static int lastLength(String s) {
+        int count = 0;
+        int length = s.length();
+
+        for (int i = length - 1; i >= 0; i--) {
+            char ch = s.charAt(i);
+            if (ch != ' ') {
+                count++;
+            }
+            if (count > 0 && ch == ' ') {
+                break;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        String S = "Hello World";
+        int r = lastLength(S);
+        System.out.println("Length of the last word: " + r);
+    }
+}
